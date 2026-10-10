@@ -1,0 +1,38 @@
+{
+  "name": "@murkio/svelte",
+  "version": "0.1.0",
+  "description": "Murkio identity for Svelte and SvelteKit: auth stores, an events action and typed <murkio-identity-*> elements.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./elements": {
+      "types": "./elements.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "elements.d.ts"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@murkio/html": "0.1.0"
+  },
+  "peerDependencies": {
+    "svelte": ">=4"
+  },
+  "devDependencies": {
+    "svelte": "5.57.1"
+  }
+}
