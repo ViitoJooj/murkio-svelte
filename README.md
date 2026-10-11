@@ -31,3 +31,17 @@ this package adds the setup, stores and typings.
   `src/app.d.ts`. Svelte 5 can also bind `onmurkio-login={...}`.
 - Server side (hooks, `+page.server.ts`): use `@murkio/node`'s `protect()` with the
   request (`await murkio.protect(event.request, { required: true })`).
+
+## Developing
+
+This repository is a git submodule of the Murkio identity service
+(`libs/external/svelte`) and is developed from there: the JavaScript packages share one
+npm workspace, and the tests read the contract, the vectors and the fixtures every Murkio
+SDK shares (`libs/spec`).
+
+```sh
+# in libs/ of the service repository, cloned with --recurse-submodules
+npm ci
+npm run build
+npm test
+```
