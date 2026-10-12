@@ -32,5 +32,3 @@ declare module 'svelte/elements' {
     'murkio-identity-error': HTMLAttributes<HTMLElement> & { form?: string };
   }
 }
-
-export {};
