@@ -25,7 +25,13 @@ describe('@murkio/svelte', () => {
     expect(states.at(-1)).toMatchObject({ isLoaded: true, isSignedIn: false });
 
     murkio.session.setSession(
-      { access_token: jwt({ sub: 'u', sid: 's', exp: Math.floor(Date.now() / 1000) + 900, roles: [] }), token_type: 'Bearer', expires_in: 900, refresh_token: 'rt', session_id: 's' },
+      {
+        access_token: jwt({ sub: 'u', sid: 's', exp: Math.floor(Date.now() / 1000) + 900, roles: [] }),
+        token_type: 'Bearer',
+        expires_in: 900,
+        refresh_token: 'rt',
+        session_id: 's',
+      },
       true,
     );
     expect(states.at(-1)).toMatchObject({ isLoaded: true, isSignedIn: true });
